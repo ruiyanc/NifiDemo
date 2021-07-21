@@ -1,0 +1,13 @@
+org/apache/nifi/processors/custom/MyPutProcessor$Value.class
+org/apache/nifi/processors/custom/MyPutProcessor$1.class
+org/apache/nifi/processors/custom/MyKafkaProcessor.class
+org/apache/nifi/processors/custom/pojo/ListableEntity.class
+org/apache/nifi/processors/custom/pojo/FTPTransfer.class
+org/apache/nifi/processors/custom/pojo/FileTransfer.class
+org/apache/nifi/processors/custom/MyKafkaProcessor$1.class
+org/apache/nifi/processors/custom/pojo/FileInfo.class
+org/apache/nifi/processors/custom/GetFileTransfer.class
+org/apache/nifi/processors/custom/MyKafkaProcessor$Value.class
+org/apache/nifi/processors/custom/pojo/FileInfo$Builder.class
+org/apache/nifi/processors/custom/MyGetFtpProcessor.class
+org/apache/nifi/processors/custom/MyPutProcessor.class
