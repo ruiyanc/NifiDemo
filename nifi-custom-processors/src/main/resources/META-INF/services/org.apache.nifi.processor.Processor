@@ -14,4 +14,11 @@
 # limitations under the License.
 #org.apache.nifi.processors.custom.MyPutProcessor
 org.apache.nifi.processors.custom.MyKafkaProcessor
-org.apache.nifi.processors.custom.MyGetFtpProcessor
+org.apache.nifi.processors.custom.MyHttpProcessor
+#org.apache.nifi.processors.custom.MyGetFtpProcessor
+org.apache.nifi.processors.custom.MyProcessor
+org.apache.nifi.processors.custom.MySocketServer
+org.apache.nifi.processors.custom.MySocketClient
+org.apache.nifi.processors.custom.MySocketClientTest
+org.apache.nifi.processors.custom.MyGetFile
+#org.apache.nifi.processors.custom.MyTimeRangeZip
