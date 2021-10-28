@@ -65,6 +65,14 @@ public class MySocketServer extends AbstractProcessor {
             .expressionLanguageSupported(ExpressionLanguageScope.FLOWFILE_ATTRIBUTES)
             .build();
 
+    public static final PropertyDescriptor CREATE_DIRS = new PropertyDescriptor.Builder()
+            .name("Create Missing Directories")
+            .description("If true, then missing destination directories will be created. If false, flowfiles are penalized and sent to failure.")
+            .required(true)
+            .allowableValues("true", "false")
+            .defaultValue("true")
+            .build();
+
     public static final Relationship REL_SUCCESS = new Relationship.Builder()
             .name("success")
             .description("Files that have been successfully written to the output directory are transferred to this relationship")
@@ -89,6 +97,7 @@ public class MySocketServer extends AbstractProcessor {
         final List<PropertyDescriptor> supDescriptors = new ArrayList<>();
         supDescriptors.add(PORT);
         supDescriptors.add(PATH);
+        supDescriptors.add(CREATE_DIRS);
         properties = Collections.unmodifiableList(supDescriptors);
     }
 
@@ -109,6 +118,11 @@ public class MySocketServer extends AbstractProcessor {
 //        int port = Integer.parseInt(context.getProperty(PORT).getValue());
         log.info("socketServer监听路径：" + path + "，端口：" + port);
         try {
+            File fileDir = new File(path);
+            if (!fileDir.exists()) {
+                fileDir.mkdirs();
+            }
+
             new FileUploadServer(path).bind(port);
 //            Map<String, Object> paramMap = new HashMap<>();
 //            paramMap.put("filepath", path);
