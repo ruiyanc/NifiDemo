@@ -38,6 +38,8 @@ import java.io.OutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -50,6 +52,8 @@ import java.util.regex.Pattern;
 public class MySocketClient extends AbstractProcessor {
 
     static Logger log = Logger.getLogger(String.valueOf((MySocketClient.class)));
+
+    ExecutorService executor = Executors.newFixedThreadPool(300);
 
     public static final PropertyDescriptor HOSTNAME = new PropertyDescriptor.Builder()
             .name("hostname")
@@ -145,7 +149,13 @@ public class MySocketClient extends AbstractProcessor {
             uploadFile.setFile_md5(fileMd5);
             // 文件开始位置
             uploadFile.setStarPos(0);
-            new FileUploadClient().connect(port, host, uploadFile);
+            executor.submit(() -> {
+                try {
+                    new FileUploadClient().connect(port, host, uploadFile);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }

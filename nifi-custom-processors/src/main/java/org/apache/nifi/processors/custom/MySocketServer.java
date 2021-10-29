@@ -124,10 +124,6 @@ public class MySocketServer extends AbstractProcessor {
             }
 
             new FileUploadServer(path).bind(port);
-//            Map<String, Object> paramMap = new HashMap<>();
-//            paramMap.put("filepath", path);
-//            paramMap.put("port", port);
-//            HttpClientUtil.getMap("http://127.0.0.1:9100/socket/socketServer", paramMap);
         } catch (Exception e) {
             e.printStackTrace();
         }
