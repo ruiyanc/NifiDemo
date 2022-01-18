@@ -17,6 +17,8 @@ org.apache.nifi.processors.custom.MyKafkaProcessor
 org.apache.nifi.processors.custom.MyHttpProcessor
 #org.apache.nifi.processors.custom.MyGetFtpProcessor
 org.apache.nifi.processors.custom.MyProcessor
+org.apache.nifi.processors.custom.MyCompressContent
+org.apache.nifi.processors.custom.CompressContentDel
 org.apache.nifi.processors.custom.MySocketServer
 org.apache.nifi.processors.custom.MySocketClient
 org.apache.nifi.processors.custom.MySocketClientTest
