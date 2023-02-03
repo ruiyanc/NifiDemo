@@ -5,11 +5,6 @@
 //import org.apache.kafka.clients.producer.ProducerRecord;
 //import org.apache.kafka.clients.producer.RecordMetadata;
 //import org.apache.kafka.common.utils.Bytes;
-//import org.apache.nifi.flowfile.FlowFile;
-//import org.apache.nifi.processor.ProcessContext;
-//import org.apache.nifi.processor.ProcessSession;
-//import org.apache.nifi.processor.exception.ProcessException;
-//import org.apache.nifi.processors.custom.MyProcessor;
 //
 //import java.io.File;
 //import java.io.FileInputStream;
@@ -20,7 +15,6 @@
 //import java.util.Map;
 //import java.util.Properties;
 //import java.util.concurrent.atomic.AtomicInteger;
-//import java.util.concurrent.atomic.AtomicReference;
 //
 //public class Test {
 //    @org.junit.Test
